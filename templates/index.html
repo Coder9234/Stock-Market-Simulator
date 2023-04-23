@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+
+{% block main %}
+    <table class = "w-100 table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+            <tbody>
+                {% for d in data %}
+                    <tr>
+                        <td>{{ d.symbol }}</td>
+                        <td>{{ d.name }}</td>
+                        <td>{{ d.shares }}</td>
+                        <td>{{ d.price }}</td>
+                        <td>{{ d.total }}</td>
+                    </tr>
+                {% endfor %}
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><b>Cash</b></td>
+                        <td>{{ cash}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><b>TOTAL</b></td>
+                        <td>{{ total }}</td>
+                    </tr>
+            </tbody>
+    </table>
+{% endblock %}

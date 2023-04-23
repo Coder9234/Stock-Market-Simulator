@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class = "w-100 table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transacted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for d in data %}
+            <tr>
+                <th>{{ d["symbol"] }}</th>
+                <th>{{ d["shares"] }}</th>
+                <th>{{ d["price"] }}</th>
+                <th>{{ d["transacted"] }}</th>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
